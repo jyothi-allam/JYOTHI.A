@@ -1,0 +1,199 @@
+
+
+==================================================================================
+AMAZON LINUX
+
+
+pip3 install --upgrade --user awscli
+sudo yum install awscli
+sudo yum update awscli
+aws --version
+ls
+go for security credential
+access key 
+secrect key
+
+
+aws configure
+enter access key 
+enter secret key
+sub region name:us-east-1
+programe file:json
+
+key pair: aws ec2 create-key-pair --key-name MyKeyPair --query 'KeyMaterial' --output text > MyKeyPair.pem
+
+Security groud: aws ec2 create-security-group --group-name my-sg --description "My security group" --vpc-id vpc-1a2b3c4d
+
+Ec2 instance create through cli: aws ec2 run-instances --image-id ami-xxxxxxxx --count 1 --instance-type t2.micro --key-name MyKeyPair --security-group-ids sg-903004f8 --subnet-id subnet-6e7f829e
+
+tag your instance: aws ec2 create-tags --resources i-5203422c --tags Key=Name,Value=MyInstance
+
+Security group on amazon linus- SHH rule apply & Connect
+
+============================================================================================================================================
+
+REDHAT LINUX
+
+
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+
+unzip awscliv2.zip
+
+sudo ./aws/install
+
+--install-dir or -i – 
+--bin-dir or -b – 
+
+./aws/install -i /usr/local/aws-cli -b /usr/local/bin
+
+sudo ./aws/install --bin-dir /usr/local/bin --install-dir /usr/local/aws-cli --update
+
+which aws
+
+ls -l /usr/local/bin/aws
+
+aws --version
+
+pUBLIC KEY COMMAND: gpg --import public-key-file-name
+curl -o awscliv2.sig https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip.sig
+curl -o awscliv2.sig https://awscli.amazonaws.com/awscli-exe-linux-x86_64-2.0.30.zip.sig
+gpg --verify awscliv2.sig awscliv2.zip
+aws configure
+enter access key 
+enter secret key
+sub region name:us-east-1
+programe file:json
+
+key pair: aws ec2 create-key-pair --key-name MyKeyPair --query 'KeyMaterial' --output text > MyKeyPair.pem
+
+Security groud: aws ec2 create-security-group --group-name my-sg --description "My security group" --vpc-id vpc-1a2b3c4d
+
+Ec2 instance create through cli: aws ec2 run-instances --image-id ami-xxxxxxxx --count 1 --instance-type t2.micro --key-name MyKeyPair --security-group-ids sg-903004f8 --subnet-id subnet-6e7f829e
+
+tag your instance: aws ec2 create-tags --resources i-5203422c --tags Key=Name,Value=MyInstance
+
+Security group on amazon linus- SHH rule apply & Connect
+
+
+=======================================================================================================================================================
+UBUNTU
+
+$ sudo curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+$ sudo unzip awscliv2.zip
+$ sudo ./aws/install
+$ aws --version
+
+
+
+
+$ sudo apt-get update
+$ sudo apt-get install awscli -y
+$ aws --version
+$ aws configure
+$ which aws
+
+
+enter access key 
+enter secret key
+sub region name:us-east-1
+programe file:json
+
+key pair: aws ec2 create-key-pair --key-name MyKeyPair --query 'KeyMaterial' --output text > MyKeyPair.pem
+
+Security groud: aws ec2 create-security-group --group-name my-sg --description "My security group" --vpc-id vpc-1a2b3c4d
+
+Ec2 instance create through cli: aws ec2 run-instances --image-id ami-xxxxxxxx --count 1 --instance-type t2.micro --key-name MyKeyPair --security-group-ids sg-903004f8 --subnet-id subnet-6e7f829e
+
+tag your instance: aws ec2 create-tags --resources i-5203422c --tags Key=Name,Value=MyInstance
+
+Security group on amazon linus- SHH rule apply & Connect
+
+
+Method 3: Installing AWS CLI using Python PIP
+
+$ sudo apt-get install python-pip
+$ sudo apt-get install python3-pip
+$ pip install awscli --upgrade --user
+$ pip3 install awscli --upgrade --user
+$ python -m awscli --version
+$ python3 -m awscli --version
+$ aws configure
+$ python -m awscli configure
+
+==============================================================================================================================
+DEBIAN
+
+sudo apt-get update
+$ sudo apt-get install awscli
+$ aws --version
+
+$ sudo apt-get -y install python-pip
+$ sudo apt-get install python3-pip
+$ pip install awscli --upgrade --user
+$ pip3 install awscli --upgrade --user
+$ python -m awscli --version
+$ python3 -m awscli --version
+$ aws configure
+$ python -m awscli configure
+
+enter access key 
+enter secret key
+sub region name:us-east-1
+programe file:json
+
+key pair: aws ec2 create-key-pair --key-name MyKeyPair --query 'KeyMaterial' --output text > MyKeyPair.pem
+
+Security group: aws ec2 create-security-group --group-name my-sg --description "My security group" --vpc-id vpc-1a2b3c4d
+
+Ec2 instance create through cli: aws ec2 run-instances --image-id ami-xxxxxxxx --count 1 --instance-type t2.micro --key-name MyKeyPair --security-group-ids sg-903004f8 --subnet-id subnet-6e7f829e
+
+tag your instance: aws ec2 create-tags --resources i-5203422c --tags Key=Name,Value=MyInstance
+
+Security group on amazon linus- SHH rule apply & Connect
+
+
+
+
+
+
+sudo pip install --upgrade pip
+sudo pip install awscli
+sudo pip install awscli --upgrade
+aws --version
+curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
+sudo apt-get -y install unzip
+
+
+
+./awscli-bundle/install -b ~/bin/aws
+$ aws configure
+
+
+
+
+
+======================================================================================================================================================
+WINDOWS 
+
+msiexec.exe /i https://awscli.amazonaws.com/AWSCLIV2.msi
+aws --version
+where /R c:\ aws
+
+c:\Program Files\Amazon\AWSCLIV2\aws.exe
+
+aws --version
+appwiz.cpl
+rmdir %UserProfile%\.aws
+pip3 install awscli --upgrade --user
+pip3 install awscli<1.16.312 --upgrade --user
+aws --version
+pip3 uninstall awscli
+rmdir %UserProfile%\.aws
+where aws
+
+
+
+
+
+
+
